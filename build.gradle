@@ -36,7 +36,7 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
 
     // For login form
-    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+//    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
 // Spring Security
     compile group: 'org.springframework.security', name: 'spring-security-web', version: '4.2.3.RELEASE'
     compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.3.RELEASE'

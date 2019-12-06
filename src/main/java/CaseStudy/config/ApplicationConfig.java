@@ -1,5 +1,7 @@
 package CaseStudy.config;
 
+import CaseStudy.services.DepartmentService;
+import CaseStudy.services.DepartmentServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -43,14 +45,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
-//    @Bean
-//    public BookService bookService(){
-//        return new BookServiceImpl();
-//    }
-//    @Bean
-//    public CategoryServices categoryServices(){
-//        return new CategoryServiceImpl();
-//    }
 
     //Thymeleaf Configuration
     @Bean
@@ -102,7 +96,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/employee-management?useUnicode=yes&characterEncoding=UTF-8");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/test");
         dataSource.setUsername("root");
         dataSource.setPassword("haunqnb2936");
         return dataSource;
@@ -121,5 +115,9 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         return properties;
+    }
+    @Bean
+    public DepartmentService departmentService(){
+        return new DepartmentServiceImpl();
     }
 }

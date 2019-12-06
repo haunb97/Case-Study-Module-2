@@ -14,6 +14,7 @@
           <node kind="schema">
             <name qname="@" />
             <name qname="employee-management" />
+            <name qname="test" />
           </node>
         </introspection-scope>
       </schema-mapping>
